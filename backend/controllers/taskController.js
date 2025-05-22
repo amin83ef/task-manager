@@ -2,7 +2,7 @@ const Task = require("../models/task");
 const Controller = require("./controller");
 
 class TaskController extends Controller{
-  // گرفتن همه تسک‌ها
+  
 async getTasks(req, res){
   try {
     const tasks = await Task.find();
@@ -12,7 +12,7 @@ async getTasks(req, res){
   }
 };
 
-// افزودن تسک جدید
+
 async createTask(req, res){
   try {
     const newTask = new Task(req.body);
@@ -23,7 +23,7 @@ async createTask(req, res){
   }
 };
 
-// ویرایش تسک
+
 async updateTask(req, res){
   try {
     const updatedTask = await Task.findByIdAndUpdate(
@@ -37,7 +37,7 @@ async updateTask(req, res){
   }
 };
 
-// حذف تسک
+
 async deleteTask(req, res){
   try {
     await Task.findByIdAndDelete(req.params.id);

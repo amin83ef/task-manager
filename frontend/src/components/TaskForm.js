@@ -11,7 +11,7 @@ const TaskForm = ({ onTaskAdded }) => {
     try {
       const newTask = await createTask({ title });
       setTitle("");
-      onTaskAdded(newTask); // به والد اطلاع می‌دهیم که تسک جدید اضافه شده
+      onTaskAdded(newTask); 
     } catch (err) {
       console.error("خطا در افزودن تسک:", err);
     }

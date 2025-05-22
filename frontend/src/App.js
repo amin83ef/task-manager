@@ -6,7 +6,7 @@ import { getTasks } from "./api";
 const App = () => {
   const [tasks, setTasks] = useState([]);
 
-  // گرفتن لیست تسک‌ها در بارگذاری اولیه
+
   useEffect(() => {
     const fetchTasks = async () => {
       try {
@@ -19,17 +19,14 @@ const App = () => {
     fetchTasks();
   }, []);
 
-  // افزودن تسک جدید
   const handleTaskAdded = (newTask) => {
     setTasks([newTask, ...tasks]);
   };
 
-  // حذف تسک
   const handleTaskDeleted = (id) => {
     setTasks(tasks.filter((task) => task._id !== id));
   };
 
-  // به‌روزرسانی تسک
   const handleTaskUpdated = (updatedTask) => {
     setTasks(
       tasks.map((task) => (task._id === updatedTask._id ? updatedTask : task))
