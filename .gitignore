@@ -1,0 +1,9 @@
+# عمومی
+node_modules/
+.env
+.vscode/
+.DS_Store
+
+# frontend
+frontend/node_modules/
+frontend/.env
